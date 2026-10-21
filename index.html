@@ -1,0 +1,593 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#1D2A3D">
+<meta property="og:title" content="Aanya & Vihaan · Wedding Invitation">
+<meta property="og:description" content="11–14 February 2027 · Udaipur">
+<meta property="og:type" content="website">
+<style>[hidden]{display:none!important}body{margin:0}img{max-width:100%}:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}</style>
+</head>
+<body>
+<title>Aanya &amp; Vihaan Wedding</title>
+<meta name="description" content="Sample interactive wedding invitation in the Aaina Aangan theme">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,500;0,6..96,600;1,6..96,500&family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=EB+Garamond:ital,wght@0,500;0,600;1,500&family=Tiro+Devanagari+Hindi&display=swap">
+<style>
+/* Layout: one sticky full-screen stage; 18 painted scenes are stacked layers that reveal over each other on scroll (jharokha arch, mirror iris, door split). Text is live HTML in each scene's calm wall. Single light look by design (clay + ivory artwork on a deep indigo surround). */
+:root{
+  color-scheme: light;
+  --ivory:#F4EBDD; --paper:#EFE3D0; --clay:#A04F3A; --clay-d:#7E3A29;
+  --indigo:#263A54; --indigo-2:#3B5274; --mirror:#FFF8EA; --gold:#D8B072; --stage:#1D2A3D;
+  --f-display:"Bodoni Moda","Didot","Bodoni 72",Georgia,serif;
+  --f-body:"Cormorant Garamond","Baskerville","Libre Baskerville",Georgia,serif;
+  --f-detail:"EB Garamond","Garamond","Baskerville",Georgia,serif;
+  --f-deva:"Tiro Devanagari Hindi","Kohinoor Devanagari","Noto Serif Devanagari",serif;
+  --ease:cubic-bezier(.22,.8,.24,1);
+}
+*{box-sizing:border-box}
+html{background:var(--stage)}
+body{background:var(--stage);color:var(--indigo);font-family:var(--f-body);-webkit-font-smoothing:antialiased;-webkit-tap-highlight-color:transparent;overscroll-behavior-y:none}
+body.locked{overflow:hidden;height:100%}
+.col{max-width:440px;margin:0 auto;position:relative;background:var(--ivory);box-shadow:0 0 90px rgba(0,0,0,.5)}
+
+/* ---------- continuous story: scenes overlap and dissolve into each other ---------- */
+.story{position:relative}
+.scene{position:relative;aspect-ratio:720/1279;max-width:100%;container-type:inline-size;isolation:isolate}
+.scene + .scene{margin-top:-24cqw}
+.art{position:absolute;inset:0;overflow:hidden;z-index:0;transform:translateZ(0)}
+.art img{position:absolute;left:0;top:-3%;width:100%;height:106%;object-fit:cover;object-position:center top;display:block;transform:translate3d(0,var(--py,0px),0) scale(1.05);will-change:transform;backface-visibility:hidden}
+.scene + .scene .art{-webkit-mask-image:linear-gradient(180deg,transparent 0%,rgba(0,0,0,.18) 4%,rgba(0,0,0,.55) 8.5%,#000 14.5%);mask-image:linear-gradient(180deg,transparent 0%,rgba(0,0,0,.18) 4%,rgba(0,0,0,.55) 8.5%,#000 14.5%)}
+.copy{position:absolute;z-index:3;left:15%;right:15%;top:calc(var(--y1) * 1%);height:calc((var(--y2) - var(--y1)) * 1%);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:2cqw;text-shadow:0 0 14px rgba(244,235,221,.95),0 0 3px rgba(244,235,221,.8)}
+.deva{font-family:var(--f-deva);font-size:4.4cqw;color:var(--clay)}
+.eyebrow{font-weight:700;font-size:max(11px,3cqw);letter-spacing:.22em;text-transform:uppercase;color:var(--indigo)}
+.title{font-family:var(--f-display);font-weight:500;font-size:10.6cqw;line-height:1.02;color:var(--clay);text-wrap:balance;letter-spacing:-.01em}
+.title.big{font-size:13.6cqw;font-style:italic}
+.amp{font-family:var(--f-display);font-style:italic;font-size:7cqw;color:var(--indigo);line-height:.6}
+.line{font-family:var(--f-detail);font-size:max(14.5px,4.15cqw);line-height:1.3;font-weight:500;color:var(--indigo);letter-spacing:.01em}
+.line.b{font-family:var(--f-body);font-weight:700;font-size:max(16px,5.2cqw)}
+.i{font-style:italic}
+.note{font-family:var(--f-detail);font-size:max(13.5px,3.8cqw);color:var(--clay-d)}
+.ap{font-size:.7em;letter-spacing:.1em;font-weight:600}
+.orn{display:flex;align-items:center;gap:2cqw}
+.orn i{display:block;width:10cqw;height:1px;background:linear-gradient(90deg,transparent,var(--indigo))}
+.orn i:last-child{transform:scaleX(-1)}
+.orn b{display:block;width:2.5cqw;height:2.5cqw;transform:rotate(45deg);border:1.5px solid var(--clay);background:var(--mirror);box-shadow:0 0 0 2px var(--ivory),0 0 12px #fff}
+.in .orn b{animation:spin 2.4s var(--ease) .5s 1}
+@keyframes spin{to{transform:rotate(405deg)}}
+.acts{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin-top:4px}
+.btn{font-family:var(--f-body);font-weight:700;font-size:max(13.5px,3.5cqw);letter-spacing:.05em;color:var(--indigo);background:rgba(255,248,234,.9);border:1.5px solid var(--indigo);border-radius:999px;padding:.5em 1.05em;text-decoration:none;cursor:pointer;display:inline-flex;align-items:center;gap:.4em;transition:transform .2s,background .2s;text-shadow:none}
+.btn svg{width:1.1em;height:1.1em}
+.btn:hover{background:var(--mirror)}
+.btn:active{transform:scale(.95)}
+.btn.solid{background:var(--clay);border-color:var(--clay);color:var(--mirror)}
+.btn.solid:hover{background:var(--clay-d)}
+.btn.wide{width:100%;justify-content:center;padding:.8em;font-size:17px}
+:focus-visible{outline:2.5px solid var(--clay);outline-offset:3px}
+.cd{display:grid;grid-template-columns:repeat(4,1fr);gap:1.6cqw;width:100%}
+.tile{background:rgba(255,248,234,.9);border:1.5px solid var(--clay);border-radius:999px 999px 8px 8px;padding:2.6cqw 2px 1.4cqw;display:flex;flex-direction:column;align-items:center;box-shadow:inset 0 0 0 3px var(--ivory);text-shadow:none}
+.tile b{font-family:var(--f-display);font-size:6.2cqw;font-weight:500;color:var(--indigo);font-variant-numeric:tabular-nums;line-height:1}
+.tile span{font-size:max(9.5px,2.3cqw);font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--clay)}
+.motes{position:fixed;top:0;left:50%;transform:translateX(-50%);width:min(100%,440px);height:100%;z-index:20;pointer-events:none}
+
+/* text choreography */
+.js .rv{opacity:0;transform:translate3d(0,14px,0);transition:opacity .55s ease,transform .55s ease}
+.js .in .rv{opacity:1;transform:none;transition:opacity 1s var(--ease),transform 1s var(--ease);transition-delay:calc(var(--i,0) * 90ms + 120ms)}
+.in .title{animation:shine 2.6s ease .6s 1}
+@keyframes shine{0%{}40%{text-shadow:0 0 20px rgba(255,248,234,1),0 0 3px rgba(216,176,114,.9)}100%{}}
+
+/* mirror glints */
+.glint{position:absolute;z-index:1;width:calc(2.2cqw*var(--s));height:calc(2.2cqw*var(--s));translate:-50% -50%;background:var(--mirror);clip-path:polygon(50% 0,60% 40%,100% 50%,60% 60%,50% 100%,40% 60%,0 50%,40% 40%);opacity:0;animation:tw 4s ease-in-out infinite;animation-play-state:paused;pointer-events:none;will-change:opacity,transform}
+.scene.vis .glint{animation-play-state:running}
+@keyframes tw{0%,100%{opacity:0;transform:scale(.3) rotate(0)}45%{opacity:1;transform:scale(1) rotate(25deg)}60%{opacity:.25}}
+
+
+/* HUD */
+.hud{position:fixed;z-index:40;left:50%;top:calc(12px + env(safe-area-inset-top,0px));transform:translateX(-50%);display:flex;align-items:center;gap:8px;background:rgba(29,42,61,.72);color:var(--mirror);border-radius:999px;padding:6px 12px 6px 8px;font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);opacity:0;transition:opacity .5s;white-space:nowrap}
+.ready .hud{opacity:1}
+.hud .ring{width:22px;height:22px;border-radius:50%;background:conic-gradient(var(--gold) calc(var(--p,0)*1turn),rgba(255,248,234,.2) 0);display:grid;place-items:center}
+.hud .ring::after{content:"";width:14px;height:14px;border-radius:50%;background:rgba(29,42,61,.95)}
+.hud .num{font-variant-numeric:tabular-nums;opacity:.75}
+.hint{position:fixed;z-index:40;left:50%;bottom:calc(92px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:4px;color:var(--indigo);font-size:12px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;background:rgba(255,248,234,.85);padding:8px 14px;border-radius:999px;opacity:0;transition:opacity .6s;pointer-events:none}
+.ready .hint.show{opacity:1}
+.hint i{width:10px;height:10px;border-right:2px solid currentColor;border-bottom:2px solid currentColor;transform:rotate(45deg);animation:bob 1.4s ease-in-out infinite}
+@keyframes bob{50%{translate:0 5px}}
+
+/* footer */
+.foot{position:relative;background:var(--paper);padding-block:46px calc(120px + env(safe-area-inset-bottom,0px));padding-left:max(22px,env(safe-area-inset-left,0px));padding-right:max(22px,env(safe-area-inset-right,0px));display:flex;flex-direction:column;align-items:center;text-align:center;gap:10px}
+.foot::before{content:"";position:absolute;left:0;right:0;top:10px;height:10px;background:radial-gradient(circle,var(--mirror) 0 2px,var(--clay) 2.5px 3.5px,transparent 4px) 0 0/18px 10px repeat-x}
+.foot .eyebrow{font-size:11px;margin:0}
+.studio-n{margin:0;font-family:var(--f-display);font-size:26px;color:var(--indigo)}
+.sub{font-size:17px;margin:0;color:var(--indigo-2)}
+
+/* ---------- cover / doors ---------- */
+.cover{position:fixed;inset:0;z-index:80;perspective:1400px}
+.cover-frame{position:relative;width:min(100%,440px);height:100%;margin:0 auto;overflow:hidden}
+.door{position:absolute;top:0;bottom:0;width:50%;overflow:hidden;transition:transform 1.8s var(--ease),filter 1.8s;z-index:1}
+.door.l{left:0;transform-origin:left center}.door.r{right:0;transform-origin:right center}
+.dart{position:absolute;inset:0;width:200%;background:url(img/02-welcome.webp) center top/cover,var(--ivory)}
+.door.r .dart{left:-100%}
+.door::after{content:"";position:absolute;top:0;bottom:0;width:14px;background:radial-gradient(circle,var(--mirror) 0 2px,var(--clay) 2.5px 4px,transparent 4.5px) center 0/14px 18px repeat-y,linear-gradient(90deg,rgba(126,58,41,.6),rgba(126,58,41,.15))}
+.door.l::after{right:0}.door.r::after{left:0;transform:scaleX(-1)}
+.seal{position:absolute;left:50%;top:44%;transform:translate(-50%,-50%);z-index:2;width:min(68%,300px);aspect-ratio:1;border-radius:50%;
+  background:radial-gradient(circle,var(--mirror) 0 60%,var(--ivory) 61%);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:6px;
+  box-shadow:0 0 0 2px var(--clay),0 0 0 9px var(--mirror),0 0 0 10.5px var(--clay),0 24px 60px rgba(29,42,61,.35);transition:transform 1.1s var(--ease),opacity .9s;color:var(--indigo);animation:breathe 3.2s ease-in-out infinite}
+@keyframes breathe{50%{box-shadow:0 0 0 2px var(--clay),0 0 0 9px var(--mirror),0 0 0 10.5px var(--clay),0 24px 70px rgba(216,176,114,.7)}}
+.seal::before{content:"";position:absolute;inset:7%;border-radius:50%;background:radial-gradient(circle,var(--mirror) 0 2px,var(--clay) 2.5px 3.2px,transparent 3.6px) 0 0/16px 16px;
+  -webkit-mask:radial-gradient(circle,transparent 0 69%,#000 70% 100%);mask:radial-gradient(circle,transparent 0 69%,#000 70% 100%);opacity:.8;animation:rot 40s linear infinite}
+@keyframes rot{to{transform:rotate(1turn)}}
+.seal .deva{font-size:15px}
+.seal .mono{font-family:var(--f-display);font-style:italic;font-size:clamp(46px,15vw,64px);line-height:.9;color:var(--clay)}
+.seal .mono em{font-size:.55em;color:var(--indigo);margin:0 .08em}
+.seal .nm{font-weight:700;font-size:17px;letter-spacing:.04em}
+.seal .dt{font-size:12px;letter-spacing:.3em;font-weight:700;color:var(--clay)}
+.guest{position:absolute;left:50%;top:calc(44% + min(34vw,150px) + 26px);transform:translateX(-50%);z-index:2;text-align:center;color:var(--indigo);font-size:16px;font-style:italic;font-weight:600;background:rgba(255,248,234,.85);padding:6px 16px;border-radius:999px;white-space:nowrap;transition:opacity .5s}
+.open-btn{position:absolute;left:50%;bottom:calc(9% + env(safe-area-inset-bottom,0px));transform:translateX(-50%);z-index:3;font-family:var(--f-body);font-weight:700;font-size:16px;letter-spacing:.22em;text-transform:uppercase;color:var(--mirror);background:var(--clay);border:0;border-radius:999px;padding:15px 30px;cursor:pointer;white-space:nowrap;box-shadow:0 10px 30px rgba(126,58,41,.45);transition:opacity .5s}
+.open-btn::before{content:"";position:absolute;inset:-6px;border-radius:inherit;border:1.5px solid var(--clay);animation:pulse 2.2s ease-out infinite}
+@keyframes pulse{0%{opacity:.9;transform:scale(1)}100%{opacity:0;transform:scale(1.25)}}
+.sample{position:absolute;top:calc(14px + env(safe-area-inset-top,0px));left:50%;transform:translateX(-50%);z-index:3;font-size:11px;letter-spacing:.2em;text-transform:uppercase;font-weight:700;color:var(--indigo);background:rgba(255,248,234,.85);border-radius:999px;padding:5px 12px;white-space:nowrap}
+.cover.opening .door.l{transform:rotateY(-108deg)}
+.cover.opening .door.r{transform:rotateY(108deg)}
+.cover.opening .door{filter:brightness(.75)}
+.cover.opening .seal{transform:translate(-50%,-50%) scale(1.4);opacity:0}
+.cover.opening .open-btn,.cover.opening .sample,.cover.opening .guest{opacity:0}
+.cover.gone{display:none}
+.burst{position:absolute;inset:0;z-index:4;pointer-events:none;width:100%;height:100%}
+
+/* ---------- dock ---------- */
+.dock{position:fixed;left:50%;bottom:0;transform:translate(-50%,130%);width:min(100%,440px);z-index:50;padding:0 max(12px,env(safe-area-inset-right,0px)) calc(12px + env(safe-area-inset-bottom,0px)) max(12px,env(safe-area-inset-left,0px));display:flex;align-items:flex-end;gap:10px;transition:transform .8s var(--ease) .5s;pointer-events:none}
+.ready .dock{transform:translate(-50%,0)}
+.nav{flex:1;display:flex;background:rgba(38,58,84,.93);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border-radius:22px;padding:6px;pointer-events:auto;box-shadow:0 10px 30px rgba(0,0,0,.3)}
+.nav button{flex:1;border:0;background:none;font:inherit;color:rgba(255,248,234,.78);font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:10px 2px;border-radius:16px;cursor:pointer;transition:.25s}
+.nav button.on{background:var(--clay);color:var(--mirror)}
+.music{pointer-events:auto;position:relative;width:52px;height:52px;flex:none;border-radius:50%;border:0;background:var(--clay);color:var(--mirror);display:grid;place-items:center;cursor:pointer;box-shadow:0 10px 30px rgba(126,58,41,.45)}
+.bars{display:flex;gap:3px;align-items:flex-end;height:18px}
+.bars i{width:3px;background:currentColor;border-radius:2px;height:5px}
+.music.on .bars i{animation:eq 1s ease-in-out infinite}
+.music.on .bars i:nth-child(2){animation-delay:.2s}.music.on .bars i:nth-child(3){animation-delay:.45s}.music.on .bars i:nth-child(4){animation-delay:.1s}
+@keyframes eq{0%,100%{height:4px}50%{height:18px}}
+.music .off-x{display:none;position:absolute;width:26px;height:2px;background:currentColor;transform:rotate(-45deg)}
+.music:not(.on) .off-x{display:block}
+.vh{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+/* ---------- sheets ---------- */
+.scrim{position:fixed;inset:0;z-index:60;background:rgba(18,26,38,.55);opacity:0;pointer-events:none;transition:opacity .35s}
+.scrim.on{opacity:1;pointer-events:auto}
+.sheet{position:fixed;left:50%;bottom:0;z-index:70;width:min(100%,440px);max-height:88svh;overflow:auto;transform:translate(-50%,105%);transition:transform .5s var(--ease);
+  background:var(--paper);border-radius:26px 26px 0 0;padding:14px max(20px,env(safe-area-inset-right,0px)) calc(24px + env(safe-area-inset-bottom,0px)) max(20px,env(safe-area-inset-left,0px));box-shadow:0 -20px 60px rgba(0,0,0,.35);overscroll-behavior:contain}
+.sheet.on{transform:translate(-50%,0)}
+.sheet::before{content:"";display:block;width:44px;height:5px;border-radius:3px;background:rgba(38,58,84,.25);margin:0 auto 10px}
+.sh-head{display:flex;align-items:flex-start;justify-content:space-between;gap:10px;margin-bottom:14px}
+.sh-head .eyebrow{font-size:11px;margin:0 0 2px}
+.h2{font-family:var(--f-display);font-weight:500;font-size:30px;line-height:1.05;color:var(--clay);margin:0}
+.x{flex:none;width:38px;height:38px;border-radius:50%;border:1.5px solid rgba(38,58,84,.3);background:var(--mirror);color:var(--indigo);font-size:20px;cursor:pointer}
+.panel[hidden]{display:none}
+.cal{display:grid;grid-template-columns:repeat(7,1fr);gap:4px;font-variant-numeric:tabular-nums;background:var(--mirror);border-radius:16px;padding:12px;border:1px solid rgba(38,58,84,.15)}
+.cal span{aspect-ratio:1;display:grid;place-items:center;font-size:15px;font-weight:600;border-radius:50%}
+.cal .dow{font-size:11px;letter-spacing:.1em;color:var(--clay);aspect-ratio:auto;padding-bottom:4px}
+.cal .fest{background:rgba(160,79,58,.14);color:var(--clay-d)}
+.cal .main{background:var(--clay);color:var(--mirror);box-shadow:0 0 0 3px var(--mirror),0 0 0 4.5px var(--clay)}
+.calm{margin:0 0 8px;font-family:var(--f-display);font-style:italic;font-size:20px;text-align:center}
+.calnote{display:flex;gap:8px;justify-content:center;align-items:center;font-size:14px;margin:10px 0 14px}
+.k{display:inline-block;width:12px;height:12px;border-radius:50%}.k.fest{background:rgba(160,79,58,.25)}.k.main{background:var(--clay);margin-left:10px}
+.stack{display:flex;flex-direction:column;gap:10px}
+.evlist{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px}
+.evrow{width:100%;display:flex;align-items:center;gap:12px;text-align:left;background:var(--mirror);border:1.5px solid rgba(38,58,84,.18);border-radius:16px;padding:10px 12px;font:inherit;color:var(--indigo);cursor:pointer;transition:.2s}
+.evrow:hover{border-color:var(--clay)}
+.evd{flex:none;width:48px;height:52px;border-radius:24px 24px 8px 8px;background:var(--clay);color:var(--mirror);display:flex;flex-direction:column;align-items:center;justify-content:center;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase}
+.evd b{font-family:var(--f-display);font-size:22px;letter-spacing:0;line-height:1}
+.evt{flex:1;min-width:0;display:flex;flex-direction:column}
+.evt b{font-size:18px}.evt small{font-size:14px;color:var(--indigo-2)}
+.go{font-size:26px;color:var(--clay)}
+.form{display:flex;flex-direction:column;gap:16px}
+.fld{display:flex;flex-direction:column;gap:6px;font-weight:700;font-size:16px}
+.fld em{font-weight:500}
+.fld.row{flex-direction:row;align-items:center;justify-content:space-between}
+input,textarea{font:inherit;font-weight:500;font-size:17px;color:var(--indigo);background:var(--mirror);border:1.5px solid rgba(38,58,84,.3);border-radius:12px;padding:11px 13px;width:100%}
+input::placeholder,textarea::placeholder{color:rgba(38,58,84,.5)}
+input:focus,textarea:focus{border-color:var(--clay);outline:none;box-shadow:0 0 0 3px rgba(160,79,58,.2)}
+fieldset{border:0;margin:0;padding:0;min-width:0}
+legend{font-weight:700;font-size:16px;margin-bottom:8px;padding:0}
+.seg{display:grid;gap:8px}.seg.three{grid-template-columns:repeat(3,1fr)}
+.seg label,.chk{position:relative;cursor:pointer}
+.seg input,.chk input{position:absolute;opacity:0;width:1px;height:1px}
+.seg span{display:block;text-align:center;padding:11px 8px;border-radius:12px;border:1.5px solid rgba(38,58,84,.3);background:var(--mirror);font-weight:700;font-size:16px;transition:.2s}
+.seg input:checked+span{background:var(--indigo);border-color:var(--indigo);color:var(--mirror)}
+.seg input:focus-visible+span,.chk input:focus-visible+span{outline:2.5px solid var(--clay);outline-offset:2px}
+.grp{display:grid;gap:8px}
+.chk span{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:11px 13px 11px 42px;border-radius:12px;border:1.5px solid rgba(38,58,84,.3);background:var(--mirror);font-size:16px}
+.chk span::before{content:"";position:absolute;left:13px;top:50%;width:18px;height:18px;margin-top:-9px;border-radius:5px;border:1.5px solid var(--indigo);background:var(--mirror)}
+.chk input:checked+span::before{background:var(--clay) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M3 8.5l3 3 7-7' fill='none' stroke='%23FFF8EA' stroke-width='2.2'/%3E%3C/svg%3E") center/14px no-repeat;border-color:var(--clay)}
+.chk small{font-size:13px;color:var(--clay);font-weight:700;letter-spacing:.06em;white-space:nowrap}
+.step{display:flex;align-items:center;gap:6px}
+.step button{width:42px;height:42px;border-radius:50%;border:1.5px solid var(--indigo);background:var(--mirror);color:var(--indigo);font-size:22px;cursor:pointer}
+.step output{min-width:34px;text-align:center;font-family:var(--f-display);font-size:24px;font-variant-numeric:tabular-nums}
+.err{margin:0;color:#9B2C1F;font-weight:700;font-size:15px}
+.fine{font-size:14px;color:var(--indigo-2);margin:0;text-align:center;font-style:italic}
+.thanks{display:flex;flex-direction:column;align-items:center;text-align:center;gap:12px;padding:16px 0}
+.copied{min-height:1.2em;margin:0;font-size:15px;color:var(--clay-d);text-align:center}
+
+@media (prefers-reduced-motion:reduce){
+  .rv,.js .in .rv{transition:opacity .4s;transform:none;filter:none}
+  .glint,.open-btn::before,.music.on .bars i,.seal,.seal::before,.in .orn b,.in .title,.hint i{animation:none}
+  .door{transition:opacity .6s}
+  .cover.opening .door{transform:none;opacity:0}
+}
+</style>
+
+<div class="cover" id="cover">
+  <div class="cover-frame">
+    <div class="door l"><div class="dart"></div></div>
+    <div class="door r"><div class="dart"></div></div>
+    <p class="sample">Sample invitation</p>
+    <div class="seal" aria-hidden="true">
+      <span class="deva">॥ शुभ विवाह ॥</span>
+      <span class="mono">A<em>&amp;</em>V</span>
+      <span class="nm">Aanya &amp; Vihaan</span>
+      <span class="dt">13 · 02 · 2027</span>
+    </div>
+    <p class="guest" id="guest">Dear Sharma Family</p>
+    <button class="open-btn" id="open" type="button">Tap to open</button>
+    <canvas class="burst" id="burst"></canvas>
+  </div>
+</div>
+
+<div class="col">
+  <main class="story" id="story">
+<section class="scene" id="s-0" data-label="Ganesh Vandana" style="--y1:20;--y2:54">
+  <div class="art"><img src="img/01-ganesh.webp" alt="" loading="eager" fetchpriority="high" decoding="async" width="720" height="1279"><span class="glint" style="left:45.8%;top:80.5%;--s:1.82;animation-delay:2.33s;animation-duration:4.27s"></span><span class="glint" style="left:57.7%;top:68.1%;--s:1.41;animation-delay:3.15s;animation-duration:4.98s"></span><span class="glint" style="left:14.3%;top:72.0%;--s:0.99;animation-delay:4.05s;animation-duration:4.73s"></span><span class="glint" style="left:9.7%;top:94.4%;--s:1.86;animation-delay:3.27s;animation-duration:4.54s"></span><span class="glint" style="left:19.9%;top:62.5%;--s:1.43;animation-delay:0.30s;animation-duration:3.48s"></span><span class="glint" style="left:27.3%;top:63.0%;--s:1.36;animation-delay:2.20s;animation-duration:5.11s"></span><span class="glint" style="left:51.7%;top:83.1%;--s:1.40;animation-delay:3.31s;animation-duration:4.14s"></span><span class="glint" style="left:30.5%;top:94.9%;--s:1.90;animation-delay:4.20s;animation-duration:4.77s"></span></div>
+  <div class="copy"><div class="rv deva">॥ श्री गणेशाय नमः ॥</div><div class="rv eyebrow">With divine blessings</div><div class="rv title">Ganesh<br>Vandana</div><div class="rv orn" aria-hidden="true"><i></i><b></b><i></i></div><div class="rv line">Aanya &amp; Vihaan</div><div class="rv line i">An auspicious beginning</div></div>
+</section>
+<section class="scene" id="s-1" data-label="Swagatam" style="--y1:18;--y2:54">
+  <div class="art"><img src="img/02-welcome.webp" alt="" loading="eager" fetchpriority="high" decoding="async" width="720" height="1279"><span class="glint" style="left:33.7%;top:69.6%;--s:1.19;animation-delay:0.35s;animation-duration:4.92s"></span><span class="glint" style="left:41.2%;top:89.9%;--s:1.29;animation-delay:4.79s;animation-duration:5.12s"></span><span class="glint" style="left:6.0%;top:68.9%;--s:1.81;animation-delay:2.35s;animation-duration:5.45s"></span><span class="glint" style="left:41.0%;top:64.4%;--s:1.53;animation-delay:3.89s;animation-duration:3.67s"></span><span class="glint" style="left:13.7%;top:73.0%;--s:1.86;animation-delay:3.79s;animation-duration:3.29s"></span><span class="glint" style="left:27.7%;top:65.3%;--s:0.96;animation-delay:3.99s;animation-duration:3.44s"></span><span class="glint" style="left:55.2%;top:76.8%;--s:1.09;animation-delay:3.66s;animation-duration:3.33s"></span><span class="glint" style="left:62.6%;top:65.8%;--s:1.32;animation-delay:1.06s;animation-duration:3.67s"></span></div>
+  <div class="copy"><div class="rv eyebrow">11 – 14 February 2027 · Udaipur</div><div class="rv title">Swagatam</div><div class="rv orn" aria-hidden="true"><i></i><b></b><i></i></div><div class="rv cd" role="timer" aria-label="Time until the wedding"><div class="tile"><b data-cd="d">000</b><span>Days</span></div><div class="tile"><b data-cd="h">00</b><span>Hours</span></div><div class="tile"><b data-cd="m">00</b><span>Min</span></div><div class="tile"><b data-cd="s">00</b><span>Sec</span></div></div><div class="rv line i">Four days of colour, music and family</div></div>
+</section>
+<section class="scene" id="s-2" data-label="The Couple" style="--y1:14;--y2:56">
+  <div class="art"><img src="img/05-couple.webp" alt="" loading="eager" decoding="async" width="720" height="1279"><span class="glint" style="left:91.4%;top:88.5%;--s:1.20;animation-delay:4.42s;animation-duration:3.53s"></span><span class="glint" style="left:40.7%;top:90.2%;--s:1.54;animation-delay:0.50s;animation-duration:5.47s"></span><span class="glint" style="left:24.8%;top:70.5%;--s:1.67;animation-delay:1.64s;animation-duration:3.74s"></span><span class="glint" style="left:12.5%;top:65.0%;--s:1.48;animation-delay:1.22s;animation-duration:4.50s"></span><span class="glint" style="left:38.7%;top:77.0%;--s:1.86;animation-delay:2.42s;animation-duration:4.44s"></span><span class="glint" style="left:82.3%;top:68.0%;--s:1.05;animation-delay:4.54s;animation-duration:5.04s"></span><span class="glint" style="left:28.0%;top:68.3%;--s:1.64;animation-delay:4.70s;animation-duration:3.49s"></span><span class="glint" style="left:89.6%;top:91.1%;--s:1.50;animation-delay:2.11s;animation-duration:3.26s"></span></div>
+  <div class="copy"><div class="rv eyebrow">Together with our families</div><div class="rv title big">Aanya</div><div class="rv amp">&amp;</div><div class="rv title big">Vihaan</div><div class="rv orn" aria-hidden="true"><i></i><b></b><i></i></div><div class="rv line">Saturday, 13 February 2027</div><div class="rv line">7:15&#8201;<span class="ap">PM</span> · Aangan Haveli</div><div class="rv acts"><button class="btn solid" type="button" data-open="savedate"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15" rx="2.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M3.5 10h17M8 3v4M16 3v4" stroke="currentColor" stroke-width="2"/></svg>Save the date</button></div></div>
+</section>
+<section class="scene" id="s-3" data-label="Groom's Family" style="--y1:17;--y2:54">
+  <div class="art"><img src="img/03-groom-family.webp" alt="" loading="eager" decoding="async" width="720" height="1279"><span class="glint" style="left:9.4%;top:93.8%;--s:1.14;animation-delay:3.52s;animation-duration:3.64s"></span><span class="glint" style="left:78.5%;top:81.7%;--s:1.19;animation-delay:0.88s;animation-duration:4.80s"></span><span class="glint" style="left:12.1%;top:69.5%;--s:1.46;animation-delay:4.26s;animation-duration:4.54s"></span><span class="glint" style="left:30.7%;top:92.3%;--s:1.10;animation-delay:0.08s;animation-duration:3.67s"></span><span class="glint" style="left:45.2%;top:64.0%;--s:1.08;animation-delay:1.84s;animation-duration:4.43s"></span><span class="glint" style="left:17.6%;top:74.0%;--s:1.79;animation-delay:4.90s;animation-duration:4.64s"></span><span class="glint" style="left:66.8%;top:81.3%;--s:1.04;animation-delay:0.18s;animation-duration:3.04s"></span><span class="glint" style="left:86.1%;top:85.1%;--s:1.86;animation-delay:0.11s;animation-duration:4.59s"></span></div>
+  <div class="copy"><div class="rv eyebrow">With love &amp; blessings</div><div class="rv title">Groom's<br>Family</div><div class="rv orn" aria-hidden="true"><i></i><b></b><i></i></div><div class="rv line b">The Mehta Family</div><div class="rv line">Mr. Rajiv Mehta<br>&amp; Mrs. Kavita Mehta</div><div class="rv line i">Ahmedabad</div></div>
+</section>
+<section class="scene" id="s-4" data-label="Bride's Family" style="--y1:20;--y2:56">
+  <div class="art"><img src="img/04-bride-family.webp" alt="" loading="eager" decoding="async" width="720" height="1279"><span class="glint" style="left:48.4%;top:86.1%;--s:1.22;animation-delay:5.00s;animation-duration:3.19s"></span><span class="glint" style="left:54.1%;top:86.3%;--s:1.80;animation-delay:3.69s;animation-duration:4.76s"></span><span class="glint" style="left:75.8%;top:92.2%;--s:1.25;animation-delay:3.43s;animation-duration:5.25s"></span><span class="glint" style="left:82.7%;top:75.8%;--s:1.69;animation-delay:4.32s;animation-duration:4.43s"></span><span class="glint" style="left:61.0%;top:74.6%;--s:1.48;animation-delay:3.04s;animation-duration:3.20s"></span><span class="glint" style="left:62.3%;top:94.8%;--s:1.78;animation-delay:3.64s;animation-duration:3.97s"></span><span class="glint" style="left:70.7%;top:81.2%;--s:1.34;animation-delay:4.19s;animation-duration:3.21s"></span><span class="glint" style="left:72.0%;top:63.0%;--s:1.50;animation-delay:2.40s;animation-duration:3.58s"></span></div>
+  <div class="copy"><div class="rv eyebrow">With love &amp; blessings</div><div class="rv title">Bride's<br>Family</div><div class="rv orn" aria-hidden="true"><i></i><b></b><i></i></div><div class="rv line b">The Shah Family</div><div class="rv line">Mr. Nikhil Shah<br>&amp; Mrs. Priya Shah</div><div class="rv line i">Udaipur</div></div>
+</section>
+<section class="scene" id="s-5" data-label="Grah Shanti" style="--y1:20;--y2:56">
+  <div class="art"><img src="img/06-grah-shanti.webp" alt="" loading="eager" decoding="async" width="720" height="1279"><span class="glint" style="left:67.5%;top:78.4%;--s:1.51;animation-delay:4.60s;animation-duration:3.64s"></span><span class="glint" style="left:7.0%;top:71.9%;--s:1.58;animation-delay:1.01s;animation-duration:3.42s"></span><span class="glint" style="left:85.7%;top:83.8%;--s:1.34;animation-delay:4.46s;animation-duration:3.82s"></span><span class="glint" style="left:64.6%;top:68.6%;--s:1.33;animation-delay:4.03s;animation-duration:5.29s"></span><span class="glint" style="left:83.5%;top:74.7%;--s:1.48;animation-delay:1.58s;animation-duration:3.34s"></span><span class="glint" style="left:49.7%;top:89.6%;--s:1.75;animation-delay:3.56s;animation-duration:5.38s"></span><span class="glint" style="left:30.4%;top:67.6%;--s:1.35;animation-delay:1.38s;animation-duration:3.54s"></span><span class="glint" style="left:42.4%;top:82.6%;--s:1.39;animation-delay:1.58s;animation-duration:5.10s"></span></div>
+  <div class="copy"><div class="rv eyebrow">Thursday · 11 February</div><div class="rv title">Grah<br>Shanti</div><div class="rv orn" aria-hidden="true"><i></i><b></b><i></i></div><div class="rv line">10:00&#8201;<span class="ap">AM</span> onwards</div><div class="rv line">Haveli Courtyard<br>Aangan Haveli, Udaipur</div><div class="rv note i">A quiet morning puja for the families</div><div class="rv acts"><a class="btn" href="https://www.google.com/maps/search/?api=1&query=Lake%20Pichola%2C%20Udaipur%2C%20Rajasthan" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 22s7-6.2 7-12a7 7 0 1 0-14 0c0 5.8 7 12 7 12z" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="10" r="2.6" fill="currentColor"/></svg>Directions</a><a class="btn" href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Grah%20Shanti%20%C2%B7%20Aanya%20%26%20Vihaan&dates=20270211T043000Z/20270211T063000Z&details=A%20quiet%20morning%20puja%20for%20the%20families&location=Haveli%20Courtyard%2C%20Aangan%20Haveli%2C%20Udaipur%2C%20Rajasthan&ctz=Asia/Kolkata" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15" rx="2.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M3.5 10h17M8 3v4M16 3v4" stroke="currentColor" stroke-width="2"/></svg>Add to calendar</a></div></div>
+</section>
+<section class="scene" id="s-6" data-label="Haldi" style="--y1:18;--y2:54">
+  <div class="art"><img src="img/07-haldi.webp" alt="" loading="eager" decoding="async" width="720" height="1279"><span class="glint" style="left:92.4%;top:76.9%;--s:0.97;animation-delay:0.16s;animation-duration:5.18s"></span><span class="glint" style="left:9.7%;top:85.4%;--s:1.47;animation-delay:1.55s;animation-duration:4.98s"></span><span class="glint" style="left:7.7%;top:66.5%;--s:1.35;animation-delay:0.12s;animation-duration:5.07s"></span><span class="glint" style="left:26.9%;top:66.6%;--s:0.95;animation-delay:3.15s;animation-duration:4.12s"></span><span class="glint" style="left:61.4%;top:83.6%;--s:1.71;animation-delay:4.79s;animation-duration:4.71s"></span><span class="glint" style="left:23.5%;top:77.7%;--s:1.08;animation-delay:0.05s;animation-duration:4.18s"></span><span class="glint" style="left:68.8%;top:67.9%;--s:1.17;animation-delay:1.73s;animation-duration:4.74s"></span><span class="glint" style="left:51.8%;top:82.3%;--s:1.66;animation-delay:1.97s;animation-duration:4.98s"></span></div>
+  <div class="copy"><div class="rv eyebrow">Thursday · 11 February</div><div class="rv title">Haldi Ke<br>Rang</div><div class="rv orn" aria-hidden="true"><i></i><b></b><i></i></div><div class="rv line">3:30&#8201;<span class="ap">PM</span> onwards</div><div class="rv line">Tulsi Terrace<br>Aangan Haveli, Udaipur</div><div class="rv note i">Wear yellow, come ready to get colourful</div><div class="rv acts"><a class="btn" href="https://www.google.com/maps/search/?api=1&query=Lake%20Pichola%2C%20Udaipur%2C%20Rajasthan" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 22s7-6.2 7-12a7 7 0 1 0-14 0c0 5.8 7 12 7 12z" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="10" r="2.6" fill="currentColor"/></svg>Directions</a><a class="btn" href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Haldi%20%C2%B7%20Aanya%20%26%20Vihaan&dates=20270211T100000Z/20270211T123000Z&details=Wear%20yellow%2C%20come%20ready%20to%20get%20colourful&location=Tulsi%20Terrace%2C%20Aangan%20Haveli%2C%20Udaipur%2C%20Rajasthan&ctz=Asia/Kolkata" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15" rx="2.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M3.5 10h17M8 3v4M16 3v4" stroke="currentColor" stroke-width="2"/></svg>Add to calendar</a></div></div>
+</section>
+<section class="scene" id="s-7" data-label="Mehendi" style="--y1:20;--y2:57">
+  <div class="art"><img src="img/08-mehendi.webp" alt="" loading="eager" decoding="async" width="720" height="1279"><span class="glint" style="left:85.7%;top:64.9%;--s:1.83;animation-delay:3.61s;animation-duration:3.32s"></span><span class="glint" style="left:45.9%;top:82.6%;--s:1.81;animation-delay:1.88s;animation-duration:4.42s"></span><span class="glint" style="left:83.4%;top:88.3%;--s:1.84;animation-delay:2.32s;animation-duration:4.63s"></span><span class="glint" style="left:24.0%;top:85.8%;--s:1.72;animation-delay:3.21s;animation-duration:4.79s"></span><span class="glint" style="left:24.8%;top:91.7%;--s:1.88;animation-delay:4.89s;animation-duration:4.34s"></span><span class="glint" style="left:75.6%;top:72.6%;--s:1.81;animation-delay:4.28s;animation-duration:3.87s"></span><span class="glint" style="left:13.3%;top:76.5%;--s:1.45;animation-delay:3.84s;animation-duration:4.22s"></span><span class="glint" style="left:8.5%;top:88.7%;--s:0.96;animation-delay:4.00s;animation-duration:3.43s"></span></div>
+  <div class="copy"><div class="rv eyebrow">Thursday · 11 February</div><div class="rv title">Mehendi<br>Ki Shaam</div><div class="rv orn" aria-hidden="true"><i></i><b></b><i></i></div><div class="rv line">7:00&#8201;<span class="ap">PM</span> onwards</div><div class="rv line">Jharokha Lounge<br>Aangan Haveli, Udaipur</div><div class="rv note i">Henna, folk songs and masala chai</div><div class="rv acts"><a class="btn" href="https://www.google.com/maps/search/?api=1&query=Lake%20Pichola%2C%20Udaipur%2C%20Rajasthan" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 22s7-6.2 7-12a7 7 0 1 0-14 0c0 5.8 7 12 7 12z" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="10" r="2.6" fill="currentColor"/></svg>Directions</a><a class="btn" href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Mehendi%20%C2%B7%20Aanya%20%26%20Vihaan&dates=20270211T133000Z/20270211T163000Z&details=Henna%2C%20folk%20songs%20and%20masala%20chai&location=Jharokha%20Lounge%2C%20Aangan%20Haveli%2C%20Udaipur%2C%20Rajasthan&ctz=Asia/Kolkata" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15" rx="2.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M3.5 10h17M8 3v4M16 3v4" stroke="currentColor" stroke-width="2"/></svg>Add to calendar</a></div></div>
+</section>
+<section class="scene" id="s-8" data-label="Sangeet" style="--y1:13;--y2:50">
+  <div class="art"><img src="img/09-sangeet.webp" alt="" loading="eager" decoding="async" width="720" height="1279"><span class="glint" style="left:35.5%;top:88.0%;--s:1.04;animation-delay:0.74s;animation-duration:4.29s"></span><span class="glint" style="left:69.7%;top:89.7%;--s:1.59;animation-delay:4.73s;animation-duration:4.23s"></span><span class="glint" style="left:89.5%;top:64.8%;--s:1.12;animation-delay:2.63s;animation-duration:3.73s"></span><span class="glint" style="left:70.1%;top:83.1%;--s:1.42;animation-delay:4.22s;animation-duration:4.40s"></span><span class="glint" style="left:33.4%;top:74.6%;--s:1.75;animation-delay:4.50s;animation-duration:3.52s"></span><span class="glint" style="left:80.9%;top:94.0%;--s:1.42;animation-delay:2.86s;animation-duration:3.50s"></span><span class="glint" style="left:53.2%;top:78.6%;--s:1.51;animation-delay:0.14s;animation-duration:5.42s"></span><span class="glint" style="left:51.4%;top:75.2%;--s:1.70;animation-delay:2.81s;animation-duration:4.23s"></span></div>
+  <div class="copy"><div class="rv eyebrow">Friday · 12 February</div><div class="rv title">Sangeet Ki<br>Mehfil</div><div class="rv orn" aria-hidden="true"><i></i><b></b><i></i></div><div class="rv line">7:30&#8201;<span class="ap">PM</span> onwards</div><div class="rv line">Mirror Hall<br>Aangan Haveli, Udaipur</div><div class="rv note i">An evening of music and dance</div><div class="rv acts"><a class="btn" href="https://www.google.com/maps/search/?api=1&query=Lake%20Pichola%2C%20Udaipur%2C%20Rajasthan" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 22s7-6.2 7-12a7 7 0 1 0-14 0c0 5.8 7 12 7 12z" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="10" r="2.6" fill="currentColor"/></svg>Directions</a><a class="btn" href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Sangeet%20%C2%B7%20Aanya%20%26%20Vihaan&dates=20270212T140000Z/20270212T170000Z&details=An%20evening%20of%20music%20and%20dance&location=Mirror%20Hall%2C%20Aangan%20Haveli%2C%20Udaipur%2C%20Rajasthan&ctz=Asia/Kolkata" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15" rx="2.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M3.5 10h17M8 3v4M16 3v4" stroke="currentColor" stroke-width="2"/></svg>Add to calendar</a></div></div>
+</section>
+<section class="scene" id="s-9" data-label="Garba Raas" style="--y1:14;--y2:52">
+  <div class="art"><img src="img/10-garba.webp" alt="" loading="eager" decoding="async" width="720" height="1279"><span class="glint" style="left:66.8%;top:64.2%;--s:1.44;animation-delay:2.07s;animation-duration:5.39s"></span><span class="glint" style="left:87.3%;top:70.9%;--s:1.37;animation-delay:0.63s;animation-duration:4.08s"></span><span class="glint" style="left:77.8%;top:91.7%;--s:1.38;animation-delay:1.59s;animation-duration:3.48s"></span><span class="glint" style="left:60.4%;top:92.5%;--s:1.03;animation-delay:3.90s;animation-duration:3.06s"></span><span class="glint" style="left:23.1%;top:69.5%;--s:1.59;animation-delay:1.61s;animation-duration:3.89s"></span><span class="glint" style="left:60.5%;top:65.5%;--s:1.63;animation-delay:0.61s;animation-duration:4.28s"></span><span class="glint" style="left:28.0%;top:68.5%;--s:1.43;animation-delay:2.18s;animation-duration:3.94s"></span><span class="glint" style="left:42.4%;top:79.5%;--s:1.06;animation-delay:1.02s;animation-duration:4.58s"></span></div>
+  <div class="copy"><div class="rv eyebrow">Friday · 12 February</div><div class="rv title">Garba<br>Raas</div><div class="rv orn" aria-hidden="true"><i></i><b></b><i></i></div><div class="rv line">10:30&#8201;<span class="ap">PM</span> onwards</div><div class="rv line">Lakeside Lawn<br>Aangan Haveli, Udaipur</div><div class="rv note i">Bring your dandiya and your best twirl</div><div class="rv acts"><a class="btn" href="https://www.google.com/maps/search/?api=1&query=Lake%20Pichola%2C%20Udaipur%2C%20Rajasthan" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 22s7-6.2 7-12a7 7 0 1 0-14 0c0 5.8 7 12 7 12z" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="10" r="2.6" fill="currentColor"/></svg>Directions</a><a class="btn" href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Garba%20Raas%20%C2%B7%20Aanya%20%26%20Vihaan&dates=20270212T170000Z/20270212T193000Z&details=Bring%20your%20dandiya%20and%20your%20best%20twirl&location=Lakeside%20Lawn%2C%20Aangan%20Haveli%2C%20Udaipur%2C%20Rajasthan&ctz=Asia/Kolkata" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15" rx="2.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M3.5 10h17M8 3v4M16 3v4" stroke="currentColor" stroke-width="2"/></svg>Add to calendar</a></div></div>
+</section>
+<section class="scene" id="s-10" data-label="Mandap Muhurat" style="--y1:11;--y2:45">
+  <div class="art"><img src="img/11-mandap-muhurat.webp" alt="" loading="eager" decoding="async" width="720" height="1279"><span class="glint" style="left:62.2%;top:79.5%;--s:1.75;animation-delay:3.06s;animation-duration:5.14s"></span><span class="glint" style="left:26.5%;top:86.4%;--s:1.71;animation-delay:4.51s;animation-duration:3.79s"></span><span class="glint" style="left:33.7%;top:92.5%;--s:1.12;animation-delay:4.99s;animation-duration:5.22s"></span><span class="glint" style="left:17.8%;top:69.9%;--s:1.63;animation-delay:1.30s;animation-duration:3.24s"></span><span class="glint" style="left:79.2%;top:75.9%;--s:1.69;animation-delay:0.63s;animation-duration:4.01s"></span><span class="glint" style="left:66.3%;top:62.6%;--s:1.10;animation-delay:3.41s;animation-duration:5.28s"></span><span class="glint" style="left:91.2%;top:65.8%;--s:1.41;animation-delay:3.79s;animation-duration:4.26s"></span><span class="glint" style="left:66.3%;top:68.2%;--s:0.97;animation-delay:0.53s;animation-duration:3.09s"></span></div>
+  <div class="copy"><div class="rv eyebrow">Saturday · 13 February</div><div class="rv title">Mandap<br>Muhurat</div><div class="rv orn" aria-hidden="true"><i></i><b></b><i></i></div><div class="rv line">9:00&#8201;<span class="ap">AM</span> onwards</div><div class="rv line">Lake Pavilion<br>Aangan Haveli, Udaipur</div><div class="rv note i">Blessing the mandap before the big day</div><div class="rv acts"><a class="btn" href="https://www.google.com/maps/search/?api=1&query=Lake%20Pichola%2C%20Udaipur%2C%20Rajasthan" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 22s7-6.2 7-12a7 7 0 1 0-14 0c0 5.8 7 12 7 12z" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="10" r="2.6" fill="currentColor"/></svg>Directions</a><a class="btn" href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Mandap%20Muhurat%20%C2%B7%20Aanya%20%26%20Vihaan&dates=20270213T033000Z/20270213T053000Z&details=Blessing%20the%20mandap%20before%20the%20big%20day&location=Lake%20Pavilion%2C%20Aangan%20Haveli%2C%20Udaipur%2C%20Rajasthan&ctz=Asia/Kolkata" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15" rx="2.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M3.5 10h17M8 3v4M16 3v4" stroke="currentColor" stroke-width="2"/></svg>Add to calendar</a></div></div>
+</section>
+<section class="scene" id="s-11" data-label="Var Yatra" style="--y1:16;--y2:54">
+  <div class="art"><img src="img/12-var-yatra.webp" alt="" loading="eager" decoding="async" width="720" height="1279"><span class="glint" style="left:54.5%;top:79.0%;--s:1.47;animation-delay:0.73s;animation-duration:3.46s"></span><span class="glint" style="left:23.9%;top:89.7%;--s:1.89;animation-delay:4.63s;animation-duration:3.24s"></span><span class="glint" style="left:11.5%;top:93.4%;--s:1.36;animation-delay:3.82s;animation-duration:3.82s"></span><span class="glint" style="left:47.1%;top:79.0%;--s:1.33;animation-delay:3.00s;animation-duration:3.03s"></span><span class="glint" style="left:67.7%;top:89.9%;--s:1.08;animation-delay:2.27s;animation-duration:4.85s"></span><span class="glint" style="left:41.7%;top:68.4%;--s:1.07;animation-delay:2.56s;animation-duration:3.04s"></span><span class="glint" style="left:84.6%;top:88.5%;--s:1.60;animation-delay:4.30s;animation-duration:4.57s"></span><span class="glint" style="left:41.6%;top:81.8%;--s:1.40;animation-delay:4.91s;animation-duration:5.01s"></span></div>
+  <div class="copy"><div class="rv eyebrow">Saturday · 13 February</div><div class="rv title">Var<br>Yatra</div><div class="rv orn" aria-hidden="true"><i></i><b></b><i></i></div><div class="rv line">5:00&#8201;<span class="ap">PM</span> onwards</div><div class="rv line">Haveli Gate<br>Aangan Haveli, Udaipur</div><div class="rv note i">The baraat leaves at sunset</div><div class="rv acts"><a class="btn" href="https://www.google.com/maps/search/?api=1&query=Lake%20Pichola%2C%20Udaipur%2C%20Rajasthan" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 22s7-6.2 7-12a7 7 0 1 0-14 0c0 5.8 7 12 7 12z" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="10" r="2.6" fill="currentColor"/></svg>Directions</a><a class="btn" href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Var%20Yatra%20%C2%B7%20Aanya%20%26%20Vihaan&dates=20270213T113000Z/20270213T133000Z&details=The%20baraat%20leaves%20at%20sunset&location=Haveli%20Gate%2C%20Aangan%20Haveli%2C%20Udaipur%2C%20Rajasthan&ctz=Asia/Kolkata" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15" rx="2.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M3.5 10h17M8 3v4M16 3v4" stroke="currentColor" stroke-width="2"/></svg>Add to calendar</a></div></div>
+</section>
+<section class="scene" id="s-12" data-label="Lagna" style="--y1:18;--y2:57">
+  <div class="art"><img src="img/13-lagna.webp" alt="" loading="eager" decoding="async" width="720" height="1279"><span class="glint" style="left:28.7%;top:92.1%;--s:1.64;animation-delay:3.89s;animation-duration:5.04s"></span><span class="glint" style="left:41.7%;top:91.6%;--s:1.78;animation-delay:3.47s;animation-duration:4.92s"></span><span class="glint" style="left:73.3%;top:75.4%;--s:1.62;animation-delay:0.35s;animation-duration:3.85s"></span><span class="glint" style="left:47.3%;top:62.3%;--s:1.26;animation-delay:3.19s;animation-duration:4.56s"></span><span class="glint" style="left:26.4%;top:93.2%;--s:1.57;animation-delay:1.69s;animation-duration:4.65s"></span><span class="glint" style="left:56.1%;top:79.6%;--s:1.29;animation-delay:5.00s;animation-duration:4.61s"></span><span class="glint" style="left:67.7%;top:87.1%;--s:1.88;animation-delay:0.11s;animation-duration:4.54s"></span><span class="glint" style="left:71.0%;top:70.5%;--s:1.30;animation-delay:0.25s;animation-duration:3.49s"></span></div>
+  <div class="copy"><div class="rv eyebrow">Saturday · 13 February</div><div class="rv title">Lagna<br>Mahotsav</div><div class="rv orn" aria-hidden="true"><i></i><b></b><i></i></div><div class="rv line">7:15&#8201;<span class="ap">PM</span> onwards</div><div class="rv line">Lake Pavilion<br>Aangan Haveli, Udaipur</div><div class="rv note i">Pheras by the lake</div><div class="rv acts"><a class="btn" href="https://www.google.com/maps/search/?api=1&query=Lake%20Pichola%2C%20Udaipur%2C%20Rajasthan" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 22s7-6.2 7-12a7 7 0 1 0-14 0c0 5.8 7 12 7 12z" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="10" r="2.6" fill="currentColor"/></svg>Directions</a><a class="btn" href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Lagna%20%C2%B7%20Aanya%20%26%20Vihaan&dates=20270213T134500Z/20270213T164500Z&details=Pheras%20by%20the%20lake&location=Lake%20Pavilion%2C%20Aangan%20Haveli%2C%20Udaipur%2C%20Rajasthan&ctz=Asia/Kolkata" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15" rx="2.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M3.5 10h17M8 3v4M16 3v4" stroke="currentColor" stroke-width="2"/></svg>Add to calendar</a></div></div>
+</section>
+<section class="scene" id="s-13" data-label="Wedding Dinner" style="--y1:18;--y2:54">
+  <div class="art"><img src="img/14-dinner.webp" alt="" loading="eager" decoding="async" width="720" height="1279"><span class="glint" style="left:39.1%;top:65.2%;--s:1.15;animation-delay:4.53s;animation-duration:4.38s"></span><span class="glint" style="left:50.7%;top:93.9%;--s:1.47;animation-delay:4.98s;animation-duration:4.60s"></span><span class="glint" style="left:77.2%;top:64.5%;--s:1.50;animation-delay:3.80s;animation-duration:3.11s"></span><span class="glint" style="left:87.9%;top:67.3%;--s:1.37;animation-delay:0.85s;animation-duration:4.24s"></span><span class="glint" style="left:59.8%;top:63.9%;--s:1.85;animation-delay:2.10s;animation-duration:4.32s"></span><span class="glint" style="left:58.6%;top:74.1%;--s:1.19;animation-delay:3.28s;animation-duration:4.40s"></span><span class="glint" style="left:31.0%;top:85.6%;--s:1.20;animation-delay:0.07s;animation-duration:3.61s"></span><span class="glint" style="left:9.8%;top:67.2%;--s:1.65;animation-delay:1.95s;animation-duration:5.24s"></span></div>
+  <div class="copy"><div class="rv eyebrow">Saturday · 13 February</div><div class="rv title">Wedding<br>Dinner</div><div class="rv orn" aria-hidden="true"><i></i><b></b><i></i></div><div class="rv line">9:30&#8201;<span class="ap">PM</span> onwards</div><div class="rv line">Courtyard Garden<br>Aangan Haveli, Udaipur</div><div class="rv note i">A Rajasthani feast under the stars</div><div class="rv acts"><a class="btn" href="https://www.google.com/maps/search/?api=1&query=Lake%20Pichola%2C%20Udaipur%2C%20Rajasthan" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 22s7-6.2 7-12a7 7 0 1 0-14 0c0 5.8 7 12 7 12z" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="10" r="2.6" fill="currentColor"/></svg>Directions</a><a class="btn" href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Wedding%20Dinner%20%C2%B7%20Aanya%20%26%20Vihaan&dates=20270213T160000Z/20270213T180000Z&details=A%20Rajasthani%20feast%20under%20the%20stars&location=Courtyard%20Garden%2C%20Aangan%20Haveli%2C%20Udaipur%2C%20Rajasthan&ctz=Asia/Kolkata" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15" rx="2.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M3.5 10h17M8 3v4M16 3v4" stroke="currentColor" stroke-width="2"/></svg>Add to calendar</a></div></div>
+</section>
+<section class="scene" id="s-14" data-label="Reception" style="--y1:15;--y2:54">
+  <div class="art"><img src="img/15-reception.webp" alt="" loading="eager" decoding="async" width="720" height="1279"><span class="glint" style="left:71.9%;top:63.7%;--s:1.89;animation-delay:4.72s;animation-duration:3.18s"></span><span class="glint" style="left:85.7%;top:76.2%;--s:1.38;animation-delay:4.87s;animation-duration:3.61s"></span><span class="glint" style="left:52.1%;top:92.9%;--s:1.62;animation-delay:2.34s;animation-duration:5.45s"></span><span class="glint" style="left:77.9%;top:81.9%;--s:1.02;animation-delay:3.12s;animation-duration:4.14s"></span><span class="glint" style="left:23.9%;top:63.7%;--s:1.43;animation-delay:0.62s;animation-duration:4.11s"></span><span class="glint" style="left:64.8%;top:77.0%;--s:1.16;animation-delay:2.91s;animation-duration:4.05s"></span><span class="glint" style="left:74.5%;top:79.5%;--s:1.90;animation-delay:4.76s;animation-duration:4.84s"></span><span class="glint" style="left:27.0%;top:65.8%;--s:1.79;animation-delay:3.92s;animation-duration:4.56s"></span></div>
+  <div class="copy"><div class="rv eyebrow">Sunday · 14 February</div><div class="rv title">Reception<br>Ki Shaam</div><div class="rv orn" aria-hidden="true"><i></i><b></b><i></i></div><div class="rv line">7:30&#8201;<span class="ap">PM</span> onwards</div><div class="rv line">Sunset Terrace<br>Aangan Haveli, Udaipur</div><div class="rv note i">Celebrate the newlyweds with us</div><div class="rv acts"><a class="btn" href="https://www.google.com/maps/search/?api=1&query=Lake%20Pichola%2C%20Udaipur%2C%20Rajasthan" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 22s7-6.2 7-12a7 7 0 1 0-14 0c0 5.8 7 12 7 12z" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="10" r="2.6" fill="currentColor"/></svg>Directions</a><a class="btn" href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Reception%20%C2%B7%20Aanya%20%26%20Vihaan&dates=20270214T140000Z/20270214T173000Z&details=Celebrate%20the%20newlyweds%20with%20us&location=Sunset%20Terrace%2C%20Aangan%20Haveli%2C%20Udaipur%2C%20Rajasthan&ctz=Asia/Kolkata" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15" rx="2.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M3.5 10h17M8 3v4M16 3v4" stroke="currentColor" stroke-width="2"/></svg>Add to calendar</a></div></div>
+</section>
+<section class="scene" id="s-15" data-label="Venue" style="--y1:11;--y2:45">
+  <div class="art"><img src="img/16-venue.webp" alt="" loading="eager" decoding="async" width="720" height="1279"><span class="glint" style="left:37.6%;top:71.0%;--s:1.59;animation-delay:2.82s;animation-duration:4.48s"></span><span class="glint" style="left:61.7%;top:86.9%;--s:1.09;animation-delay:1.24s;animation-duration:5.45s"></span><span class="glint" style="left:86.6%;top:91.0%;--s:0.94;animation-delay:0.30s;animation-duration:3.68s"></span><span class="glint" style="left:43.4%;top:82.6%;--s:1.00;animation-delay:2.71s;animation-duration:3.18s"></span><span class="glint" style="left:13.6%;top:84.3%;--s:1.45;animation-delay:3.16s;animation-duration:3.93s"></span><span class="glint" style="left:48.1%;top:69.0%;--s:1.24;animation-delay:3.72s;animation-duration:5.10s"></span><span class="glint" style="left:12.5%;top:66.0%;--s:1.71;animation-delay:3.12s;animation-duration:4.92s"></span><span class="glint" style="left:24.8%;top:76.0%;--s:1.16;animation-delay:4.05s;animation-duration:3.92s"></span></div>
+  <div class="copy"><div class="rv eyebrow">Celebrate with us</div><div class="rv title">Our Wedding<br>Venue</div><div class="rv orn" aria-hidden="true"><i></i><b></b><i></i></div><div class="rv line b">Aangan Haveli</div><div class="rv line">Lake Pichola Road<br>Udaipur, Rajasthan</div><div class="rv line i">13 February 2027 · 7:15&#8201;<span class="ap">PM</span></div><div class="rv acts"><a class="btn solid" href="https://www.google.com/maps/search/?api=1&query=Lake%20Pichola%2C%20Udaipur%2C%20Rajasthan" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 22s7-6.2 7-12a7 7 0 1 0-14 0c0 5.8 7 12 7 12z" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="10" r="2.6" fill="currentColor"/></svg>Open in Google Maps</a></div></div>
+</section>
+<section class="scene" id="s-16" data-label="RSVP" style="--y1:10;--y2:49">
+  <div class="art"><img src="img/17-rsvp.webp" alt="" loading="eager" decoding="async" width="720" height="1279"><span class="glint" style="left:63.5%;top:94.6%;--s:1.23;animation-delay:2.74s;animation-duration:4.87s"></span><span class="glint" style="left:87.0%;top:76.1%;--s:1.27;animation-delay:0.49s;animation-duration:5.19s"></span><span class="glint" style="left:12.9%;top:64.7%;--s:1.46;animation-delay:2.42s;animation-duration:4.71s"></span><span class="glint" style="left:32.3%;top:87.6%;--s:0.98;animation-delay:1.07s;animation-duration:4.66s"></span><span class="glint" style="left:13.2%;top:72.0%;--s:1.62;animation-delay:3.47s;animation-duration:3.71s"></span><span class="glint" style="left:18.6%;top:73.8%;--s:1.63;animation-delay:1.83s;animation-duration:3.29s"></span><span class="glint" style="left:68.4%;top:80.8%;--s:1.82;animation-delay:4.70s;animation-duration:5.28s"></span><span class="glint" style="left:44.5%;top:88.5%;--s:1.20;animation-delay:1.59s;animation-duration:4.00s"></span></div>
+  <div class="copy"><div class="rv eyebrow">We look forward to seeing you</div><div class="rv title">Kindly<br>RSVP</div><div class="rv orn" aria-hidden="true"><i></i><b></b><i></i></div><div class="rv line">Tell us who's coming<br>in under a minute</div><div class="rv line i">Please reply by 25 January 2027</div><div class="rv acts"><button class="btn solid" type="button" data-open="rsvp">Reply now</button></div></div>
+</section>
+<section class="scene" id="s-17" data-label="With Love" style="--y1:15;--y2:52">
+  <div class="art"><img src="img/18-closing.webp" alt="" loading="eager" decoding="async" width="720" height="1279"><span class="glint" style="left:88.3%;top:91.5%;--s:1.15;animation-delay:1.81s;animation-duration:3.91s"></span><span class="glint" style="left:38.0%;top:75.1%;--s:1.29;animation-delay:0.97s;animation-duration:4.41s"></span><span class="glint" style="left:76.1%;top:79.8%;--s:1.74;animation-delay:2.81s;animation-duration:3.44s"></span><span class="glint" style="left:72.8%;top:91.1%;--s:1.18;animation-delay:0.11s;animation-duration:4.29s"></span><span class="glint" style="left:53.9%;top:80.7%;--s:1.87;animation-delay:3.26s;animation-duration:5.01s"></span><span class="glint" style="left:11.6%;top:80.0%;--s:1.69;animation-delay:0.42s;animation-duration:3.20s"></span><span class="glint" style="left:70.9%;top:91.7%;--s:0.98;animation-delay:3.17s;animation-duration:3.36s"></span><span class="glint" style="left:71.6%;top:83.4%;--s:1.15;animation-delay:1.10s;animation-duration:4.91s"></span></div>
+  <div class="copy"><div class="rv title">With Love<br>&amp; Gratitude</div><div class="rv orn" aria-hidden="true"><i></i><b></b><i></i></div><div class="rv line">Thank you for being part<br>of our celebration</div><div class="rv line b">Aanya &amp; Vihaan</div><div class="rv note">#AanyaWedsVihaan</div><div class="rv acts"><button class="btn solid" type="button" data-open="share">Share invitation</button></div></div>
+</section>
+  </main>
+  <canvas class="motes" id="motes"></canvas>
+  <div class="hud" aria-live="polite"><span class="ring" id="ring"></span><span id="hud-l">Ganesh Vandana</span><span class="num" id="hud-n">01/18</span></div>
+  <div class="hint" id="hint"><span>Scroll</span><i></i></div>
+  <footer class="foot" id="foot">
+    <p class="eyebrow">Invitation by</p>
+    <p class="studio-n">Shaadi Video Films</p>
+    <p class="sub">Wedding films &amp; interactive invitations</p>
+  </footer>
+</div>
+
+<div class="dock" id="dock">
+  <nav class="nav" aria-label="Sections">
+    <button type="button" data-go="0" class="on" id="nv-home">Home</button>
+    <button type="button" data-open="events" id="nv-events">Events</button>
+    <button type="button" data-go="15" id="nv-venue">Venue</button>
+    <button type="button" data-open="rsvp" id="nv-rsvp">RSVP</button>
+  </nav>
+  <button class="music" id="music" type="button" aria-pressed="false"><span class="bars" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span class="off-x" aria-hidden="true"></span><span class="vh" id="music-l">Play music</span></button>
+</div>
+
+<div class="scrim" id="scrim"></div>
+<div class="sheet" id="sheet" role="dialog" aria-modal="true" aria-labelledby="sh-title" tabindex="-1">
+  <div class="sh-head"><div><p class="eyebrow" id="sh-eye">Save the date</p><h2 class="h2" id="sh-title">February 2027</h2></div><button class="x" type="button" id="sh-x" aria-label="Close">×</button></div>
+
+  <div class="panel" data-p="savedate">
+    <p class="calm">February 2027</p>
+    <div class="cal"><span class="dow">M</span><span class="dow">T</span><span class="dow">W</span><span class="dow">T</span><span class="dow">F</span><span class="dow">S</span><span class="dow">S</span><span class="d">1</span><span class="d">2</span><span class="d">3</span><span class="d">4</span><span class="d">5</span><span class="d">6</span><span class="d">7</span><span class="d">8</span><span class="d">9</span><span class="d">10</span><span class="d fest">11</span><span class="d fest">12</span><span class="d main">13</span><span class="d fest">14</span><span class="d">15</span><span class="d">16</span><span class="d">17</span><span class="d">18</span><span class="d">19</span><span class="d">20</span><span class="d">21</span><span class="d">22</span><span class="d">23</span><span class="d">24</span><span class="d">25</span><span class="d">26</span><span class="d">27</span><span class="d">28</span></div>
+    <p class="calnote"><span class="k fest"></span>Celebrations <span class="k main"></span>Wedding day</p>
+    <div class="stack">
+      <a class="btn solid wide" href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Wedding%20%C2%B7%20Aanya%20%26%20Vihaan&dates=20270213T134500Z/20270213T164500Z&details=Pheras%20by%20the%20lake&location=Aangan%20Haveli%2C%20Udaipur%2C%20Rajasthan&ctz=Asia/Kolkata" target="_blank" rel="noopener">Add wedding to Google Calendar</a>
+      <a class="btn wide" href="https://www.google.com/maps/search/?api=1&query=Lake%20Pichola%2C%20Udaipur%2C%20Rajasthan" target="_blank" rel="noopener">Open venue in Google Maps</a>
+      <button class="btn wide" type="button" data-open="events">See all 10 ceremonies</button>
+    </div>
+  </div>
+
+  <div class="panel" data-p="events" hidden>
+    <ul class="evlist"><li><button type="button" class="evrow" data-go="5"><span class="evd"><b>11</b>Feb</span><span class="evt"><b>Grah Shanti</b><small>Thu · 10:00&#8201;<span class="ap">AM</span> · Haveli Courtyard</small></span><span class="go" aria-hidden="true">›</span></button></li><li><button type="button" class="evrow" data-go="6"><span class="evd"><b>11</b>Feb</span><span class="evt"><b>Haldi</b><small>Thu · 3:30&#8201;<span class="ap">PM</span> · Tulsi Terrace</small></span><span class="go" aria-hidden="true">›</span></button></li><li><button type="button" class="evrow" data-go="7"><span class="evd"><b>11</b>Feb</span><span class="evt"><b>Mehendi</b><small>Thu · 7:00&#8201;<span class="ap">PM</span> · Jharokha Lounge</small></span><span class="go" aria-hidden="true">›</span></button></li><li><button type="button" class="evrow" data-go="8"><span class="evd"><b>12</b>Feb</span><span class="evt"><b>Sangeet</b><small>Fri · 7:30&#8201;<span class="ap">PM</span> · Mirror Hall</small></span><span class="go" aria-hidden="true">›</span></button></li><li><button type="button" class="evrow" data-go="9"><span class="evd"><b>12</b>Feb</span><span class="evt"><b>Garba Raas</b><small>Fri · 10:30&#8201;<span class="ap">PM</span> · Lakeside Lawn</small></span><span class="go" aria-hidden="true">›</span></button></li><li><button type="button" class="evrow" data-go="10"><span class="evd"><b>13</b>Feb</span><span class="evt"><b>Mandap Muhurat</b><small>Sat · 9:00&#8201;<span class="ap">AM</span> · Lake Pavilion</small></span><span class="go" aria-hidden="true">›</span></button></li><li><button type="button" class="evrow" data-go="11"><span class="evd"><b>13</b>Feb</span><span class="evt"><b>Var Yatra</b><small>Sat · 5:00&#8201;<span class="ap">PM</span> · Haveli Gate</small></span><span class="go" aria-hidden="true">›</span></button></li><li><button type="button" class="evrow" data-go="12"><span class="evd"><b>13</b>Feb</span><span class="evt"><b>Lagna</b><small>Sat · 7:15&#8201;<span class="ap">PM</span> · Lake Pavilion</small></span><span class="go" aria-hidden="true">›</span></button></li><li><button type="button" class="evrow" data-go="13"><span class="evd"><b>13</b>Feb</span><span class="evt"><b>Wedding Dinner</b><small>Sat · 9:30&#8201;<span class="ap">PM</span> · Courtyard Garden</small></span><span class="go" aria-hidden="true">›</span></button></li><li><button type="button" class="evrow" data-go="14"><span class="evd"><b>14</b>Feb</span><span class="evt"><b>Reception</b><small>Sun · 7:30&#8201;<span class="ap">PM</span> · Sunset Terrace</small></span><span class="go" aria-hidden="true">›</span></button></li></ul>
+  </div>
+
+  <div class="panel" data-p="rsvp" hidden>
+    <form id="rsvp-f" class="form" novalidate>
+      <label class="fld" for="r-name"><span>Your name</span><input id="r-name" name="name" autocomplete="name" placeholder="e.g. Sharma Family" required></label>
+      <fieldset class="seg" id="r-att">
+        <legend>Will you join us?</legend>
+        <label><input type="radio" name="att" id="att-yes" value="Joyfully accepts" checked><span>Joyfully accept</span></label>
+        <label><input type="radio" name="att" id="att-maybe" value="Not sure yet"><span>Not sure yet</span></label>
+        <label><input type="radio" name="att" id="att-no" value="Regretfully declines"><span>Regretfully decline</span></label>
+      </fieldset>
+      <fieldset class="grp" id="r-events"><legend>Which ceremonies?</legend><label class="chk"><input type="checkbox" id="evc-0" name="events" value="Grah Shanti, Haldi &amp; Mehendi" checked><span><b>Grah Shanti, Haldi &amp; Mehendi</b><small>Thu 11 Feb</small></span></label><label class="chk"><input type="checkbox" id="evc-1" name="events" value="Sangeet &amp; Garba" checked><span><b>Sangeet &amp; Garba</b><small>Fri 12 Feb</small></span></label><label class="chk"><input type="checkbox" id="evc-2" name="events" value="Var Yatra, Lagna &amp; Dinner" checked><span><b>Var Yatra, Lagna &amp; Dinner</b><small>Sat 13 Feb</small></span></label><label class="chk"><input type="checkbox" id="evc-3" name="events" value="Reception" checked><span><b>Reception</b><small>Sun 14 Feb</small></span></label></fieldset>
+      <fieldset class="seg three" id="r-food">
+        <legend>Food preference</legend>
+        <label><input type="radio" name="food" id="f-veg" value="Veg" checked><span>Veg</span></label>
+        <label><input type="radio" name="food" id="f-jain" value="Jain"><span>Jain</span></label>
+        <label><input type="radio" name="food" id="f-non" value="Non-veg"><span>Non-veg</span></label>
+      </fieldset>
+      <div class="fld row"><span>Guests</span>
+        <div class="step"><button type="button" id="g-minus" aria-label="Fewer guests">−</button><output id="g-count" aria-live="polite">2</output><button type="button" id="g-plus" aria-label="More guests">+</button></div>
+      </div>
+      <label class="fld" for="r-msg"><span>Blessings for the couple <em>(optional)</em></span><textarea id="r-msg" rows="3" placeholder="Write a few words"></textarea></label>
+      <p class="err" id="r-err" hidden>Please add your name so the family knows who replied.</p>
+      <a class="btn solid wide" id="r-send" href="https://wa.me/" target="_blank" rel="noopener">Send reply on WhatsApp</a>
+      <p class="fine">Your reply opens in WhatsApp, ready to send to the family.</p>
+    </form>
+    <div class="thanks" id="r-thanks" hidden tabindex="-1">
+      <p class="eyebrow">Reply ready</p>
+      <h3 class="h2" id="r-thanks-h">Thank you!</h3>
+      <p class="sub" id="r-thanks-p"></p>
+      <button class="btn" type="button" id="r-again">Edit reply</button>
+    </div>
+  </div>
+
+  <div class="panel" data-p="share" hidden>
+    <div class="stack">
+      <a class="btn solid wide" id="wa" href="https://wa.me/" target="_blank" rel="noopener">Share on WhatsApp</a>
+      <button class="btn wide" type="button" id="copy">Copy invitation link</button>
+      <p class="copied" id="copied" aria-live="polite"></p>
+    </div>
+  </div>
+</div>
+
+<script>
+var DATA={"N": 18, "labels": ["Ganesh Vandana", "Swagatam", "The Couple", "Groom's Family", "Bride's Family", "Grah Shanti", "Haldi", "Mehendi", "Sangeet", "Garba Raas", "Mandap Muhurat", "Var Yatra", "Lagna", "Wedding Dinner", "Reception", "Venue", "RSVP", "With Love"], "wedCal": "https://calendar.google.com/calendar/render?action=TEMPLATE&text=Wedding%20%C2%B7%20Aanya%20%26%20Vihaan&dates=20270213T134500Z/20270213T164500Z&details=Pheras%20by%20the%20lake&location=Aangan%20Haveli%2C%20Udaipur%2C%20Rajasthan&ctz=Asia/Kolkata"};
+(function(){
+  var d=document, root=d.documentElement, body=d.body, N=DATA.N;
+  var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var store={get:function(k){try{return localStorage.getItem(k)}catch(e){return null}},set:function(k,v){try{localStorage.setItem(k,v)}catch(e){}}};
+  
+  /* personalised guest name: ?to=Name is not supported in the viewer, so #to-Name-Family */
+  var gm=/^#to-([A-Za-z0-9_.~-]+)$/.exec(location.hash||'');
+  if(gm){d.getElementById('guest').textContent='Dear '+gm[1].replace(/[-_]+/g,' ')}
+
+  /* ---------- scroll: parallax, reveals, HUD ---------- */
+  root.classList.add('js');
+  var secs=[].slice.call(d.querySelectorAll('.scene'));
+  secs.forEach(function(s){s.querySelectorAll('.rv').forEach(function(el,j){el.style.setProperty('--i',j)})});
+  var imgs=secs.map(function(s){return s.querySelector('.art img')});
+  var W=0,H=0,ticking=false,lastK=-1,started=false;
+  function measure(){W=Math.min(innerWidth,440);H=innerHeight; var m=d.getElementById('motes'),dpr=Math.min(2,devicePixelRatio||1); m.width=W*dpr; m.height=H*dpr; mctx.setTransform(dpr,0,0,dpr,0,0)}
+  var pyCache=[];
+  function frame(){
+    ticking=false;
+    var mid=H*.5, k=0;
+    for(var j=0;j<secs.length;j++){
+      var r=secs[j].getBoundingClientRect();
+      if(r.top<mid) k=j;
+      if(started && !secs[j].classList.contains('in') && r.top < H*.8 && r.bottom > H*.12) secs[j].classList.add('in');
+      if(reduce) continue;
+      var p=(H-r.top)/(H+r.height); p=p<0?0:(p>1?1:p);
+      var v=Math.round((.5-p)*r.height*.04);
+      if(pyCache[j]!==v){pyCache[j]=v; imgs[j].style.setProperty('--py',v+'px')}
+    }
+    if(k!==lastK){lastK=k; hud(k)}
+    var docH=d.documentElement.scrollHeight-H;
+    d.getElementById('ring').style.setProperty('--p',docH>0?(scrollY/docH).toFixed(3):0);
+    d.getElementById('hint').classList.toggle('show',scrollY<40);
+  }
+  if('IntersectionObserver' in window){var vo=new IntersectionObserver(function(es){es.forEach(function(e){e.target.classList.toggle('vis',e.isIntersecting)})},{rootMargin:'20% 0px'}); secs.forEach(function(s){vo.observe(s)})} else secs.forEach(function(s){s.classList.add('vis')});
+  /* load and decode every painting up front so nothing pops in while scrolling */
+  imgs.forEach(function(im,i){im.loading='eager'; if(im.decode){var go=function(){im.decode().catch(function(){})}; if(im.complete) go(); else im.addEventListener('load',go,{once:true})}});
+  function kick(){if(!ticking){ticking=true;requestAnimationFrame(frame)}}
+  addEventListener('scroll',kick,{passive:true});
+  addEventListener('resize',function(){measure();kick()});
+  function hud(i){
+    d.getElementById('hud-l').textContent=DATA.labels[i];
+    d.getElementById('hud-n').textContent=(i<9?'0':'')+(i+1)+'/'+N;
+    var navKey=i===15?'nv-venue':(i>=16?'nv-rsvp':(i>=5?'nv-events':'nv-home'));
+    ['nv-home','nv-events','nv-venue','nv-rsvp'].forEach(function(id){d.getElementById(id).classList.toggle('on',id===navKey)});
+  }
+  function goTo(i){
+    var s=secs[i], y=s.getBoundingClientRect().top+scrollY+(i?s.offsetHeight*.06:0);
+    scrollTo({top:y,behavior:reduce?'auto':'smooth'});
+  }
+
+  /* ---------- motes + tap sparkles ---------- */
+  var mctx=d.getElementById('motes').getContext('2d'), motes=[], sparks=[];
+  for(var i=0;i<16;i++) motes.push({x:Math.random(),y:Math.random(),r:.6+Math.random()*1.8,v:.00012+Math.random()*.00035,ph:Math.random()*6.28});
+  var lastT=0;
+  function particles(ts){
+    var dt=Math.min(50,ts-(lastT||ts)); lastT=ts;
+    mctx.clearRect(0,0,W,H);
+    if(!reduce) motes.forEach(function(m){m.y-=m.v*dt; m.ph+=dt*.0012; if(m.y<-.02){m.y=1.02;m.x=Math.random()}
+      var a=.25+.35*Math.sin(m.ph); mctx.globalAlpha=Math.max(0,a); mctx.fillStyle='#FFF4DC'; mctx.beginPath(); mctx.arc(m.x*W+Math.sin(m.ph)*6,m.y*H,m.r,0,6.283); mctx.fill()});
+    sparks=sparks.filter(function(p){p.life-=dt*.0016; if(p.life<=0) return false; p.x+=p.vx*dt*.06; p.y+=p.vy*dt*.06; p.vy+=.004*dt; p.rot+=.006*dt;
+      mctx.save(); mctx.globalAlpha=p.life; mctx.translate(p.x,p.y); mctx.rotate(p.rot); mctx.fillStyle=p.c; mctx.beginPath(); mctx.moveTo(0,-p.r); mctx.lineTo(p.r*.32,0); mctx.lineTo(0,p.r); mctx.lineTo(-p.r*.32,0); mctx.closePath(); mctx.fill(); mctx.restore(); return true});
+    mctx.globalAlpha=1;
+    requestAnimationFrame(particles);
+  }
+  d.getElementById('story').addEventListener('pointerdown',function(ev){
+    if(reduce||ev.target.closest('a,button,input')) return;
+    var x=ev.clientX-(innerWidth-W)/2, y=ev.clientY, cols=['#FFF8EA','#D8B072','#A04F3A','#FFFFFF'];
+    for(var i=0;i<22;i++){var a=Math.random()*6.283,s=1.5+Math.random()*4;sparks.push({x:x,y:y,vx:Math.cos(a)*s,vy:Math.sin(a)*s-1.5,r:2.5+Math.random()*5,c:cols[i%4],rot:Math.random()*6,life:1})}
+    if(on&&ctx) chime();
+  });
+
+  /* ---------- music: generated tanpura drone + santoor-like plucks ---------- */
+  var ctx,master,on=false,timer,step=0,idx=4, scale=[0,2,4,7,9,12,14,16,19,21];
+  function build(){
+    var AC=window.AudioContext||window.webkitAudioContext; if(!AC) return false;
+    ctx=new AC(); master=ctx.createGain(); master.gain.value=0;
+    var comp=ctx.createDynamicsCompressor(); master.connect(comp); comp.connect(ctx.destination);
+    var delay=ctx.createDelay(); delay.delayTime.value=.33; var fb=ctx.createGain(); fb.gain.value=.28; var wet=ctx.createGain(); wet.gain.value=.35;
+    delay.connect(fb); fb.connect(delay); delay.connect(wet); wet.connect(master); ctx._send=delay;
+    var lp=ctx.createBiquadFilter(); lp.type='lowpass'; lp.frequency.value=520; lp.Q.value=4;
+    var dg=ctx.createGain(); dg.gain.value=.05; lp.connect(dg); dg.connect(master);
+    [130.81,196,261.63,65.41].forEach(function(f,i){var o=ctx.createOscillator();o.type='sawtooth';o.frequency.value=f;o.detune.value=(i-1.5)*3;var g=ctx.createGain();g.gain.value=i==3?.6:.35;o.connect(g);g.connect(lp);o.start()});
+    var lfo=ctx.createOscillator(); lfo.frequency.value=.09; var lg=ctx.createGain(); lg.gain.value=220; lfo.connect(lg); lg.connect(lp.frequency); lfo.start();
+    return true;
+  }
+  function pluck(semi,vel,when){
+    var t=ctx.currentTime+(when||0), f=261.63*Math.pow(2,semi/12);
+    var g=ctx.createGain(); g.gain.setValueAtTime(0,t); g.gain.linearRampToValueAtTime(.16*vel,t+.006); g.gain.exponentialRampToValueAtTime(.0008,t+2.2);
+    [[1,'triangle',1],[2.01,'sine',.35],[3.98,'sine',.12]].forEach(function(p){var o=ctx.createOscillator();o.type=p[1];o.frequency.value=f*p[0];var og=ctx.createGain();og.gain.value=p[2];o.connect(og);og.connect(g);o.start(t);o.stop(t+2.3)});
+    g.connect(master); g.connect(ctx._send);
+  }
+  function chime(){[12,16,19,24].forEach(function(s,i){pluck(s,.5,i*.07)})}
+  function tick(){step++; if(step%8===0||Math.random()<.55){idx=Math.max(0,Math.min(scale.length-1,idx+[-2,-1,-1,1,1,2,0][Math.floor(Math.random()*7)])); pluck(scale[idx],.6+Math.random()*.4); if(Math.random()<.18) pluck(scale[idx],.4,.11)}}
+  var btnM=d.getElementById('music'), lab=d.getElementById('music-l');
+  function setMusic(v){
+    if(v&&!ctx&&!build()) return;
+    on=v; btnM.classList.toggle('on',v); btnM.setAttribute('aria-pressed',v); lab.textContent=v?'Pause music':'Play music';
+    if(!ctx) return;
+    var t=ctx.currentTime; master.gain.cancelScheduledValues(t); master.gain.setValueAtTime(master.gain.value,t);
+    if(v){ctx.resume(); master.gain.linearRampToValueAtTime(.55,t+1.6); clearInterval(timer); timer=setInterval(tick,420)}
+    else{master.gain.linearRampToValueAtTime(0,t+.5); clearInterval(timer); setTimeout(function(){if(!on)ctx.suspend()},600)}
+  }
+  btnM.addEventListener('click',function(){setMusic(!on); store.set('aaina-music',on?'1':'0')});
+  d.addEventListener('visibilitychange',function(){if(!ctx)return; if(d.hidden) ctx.suspend(); else if(on) ctx.resume()});
+
+  /* ---------- cover ---------- */
+  var cover=d.getElementById('cover');
+  function coverBurst(){
+    var c=d.getElementById('burst'); if(reduce) return;
+    var x=c.getContext('2d'), dpr=Math.min(2,devicePixelRatio||1), w=c.clientWidth, h=c.clientHeight;
+    c.width=w*dpr; c.height=h*dpr; x.scale(dpr,dpr);
+    var ps=[],cols=['#FFF8EA','#D8B072','#A04F3A','#F4EBDD'];
+    for(var i=0;i<80;i++){var a=Math.random()*Math.PI*2,s=2+Math.random()*7;ps.push({x:w/2,y:h*.44,vx:Math.cos(a)*s,vy:Math.sin(a)*s-2,r:2+Math.random()*5,c:cols[i%4],rot:Math.random()*6,life:1})}
+    (function f(){x.clearRect(0,0,w,h);var alive=0;ps.forEach(function(p){if(p.life<=0)return;alive++;p.x+=p.vx;p.y+=p.vy;p.vy+=.12;p.vx*=.985;p.rot+=.1;p.life-=.011;
+      x.save();x.globalAlpha=Math.max(0,p.life);x.translate(p.x,p.y);x.rotate(p.rot);x.fillStyle=p.c;x.beginPath();x.moveTo(0,-p.r);x.lineTo(p.r*.35,0);x.lineTo(0,p.r);x.lineTo(-p.r*.35,0);x.closePath();x.fill();x.restore()});
+      if(alive) requestAnimationFrame(f)})();
+  }
+  var deep=/^#s-(\d+)$/.exec(location.hash||'');
+  function ready(){root.classList.add('ready'); started=true; measure(); kick()}
+  if(deep){cover.classList.add('gone'); ready(); setTimeout(function(){goTo(+deep[1])},300)}
+  else{
+    body.classList.add('locked');
+    d.getElementById('open').addEventListener('click',function(){
+      if(cover.classList.contains('opening')) return;
+      if(store.get('aaina-music')!=='0') setMusic(true);
+      cover.classList.add('opening'); coverBurst(); scrollTo(0,0);
+      setTimeout(function(){body.classList.remove('locked'); ready()}, reduce?300:1000);
+      setTimeout(function(){cover.classList.add('gone')}, reduce?700:2000);
+    });
+  }
+
+  /* ---------- sheets ---------- */
+  var sheet=d.getElementById('sheet'), scrim=d.getElementById('scrim'), lastFocus=null;
+  var titles={savedate:['Save the date','11 – 14 Feb 2027'],events:['The celebrations','10 ceremonies'],rsvp:['Kindly RSVP','Will you join us?'],share:['Share the joy','Send this invitation']};
+  function openSheet(p){
+    lastFocus=d.activeElement;
+    sheet.querySelectorAll('.panel').forEach(function(el){el.hidden=el.dataset.p!==p});
+    d.getElementById('sh-eye').textContent=titles[p][0]; d.getElementById('sh-title').textContent=titles[p][1];
+    sheet.scrollTop=0; sheet.classList.add('on'); scrim.classList.add('on'); body.style.overflow='hidden';
+    setTimeout(function(){sheet.focus()},50);
+  }
+  function closeSheet(){sheet.classList.remove('on'); scrim.classList.remove('on'); body.style.overflow=''; if(lastFocus&&lastFocus.focus) lastFocus.focus()}
+  d.addEventListener('click',function(ev){
+    var o=ev.target.closest('[data-open]'); if(o){ev.preventDefault(); openSheet(o.dataset.open); return}
+    var g=ev.target.closest('[data-go]'); if(g){var wasOpen=sheet.classList.contains('on'); if(wasOpen) closeSheet(); setTimeout(function(){goTo(+g.dataset.go)},wasOpen?350:0)}
+  });
+  scrim.addEventListener('click',closeSheet); d.getElementById('sh-x').addEventListener('click',closeSheet);
+  d.addEventListener('keydown',function(ev){if(ev.key==='Escape'&&sheet.classList.contains('on')) closeSheet()});
+
+  /* ---------- countdown ---------- */
+  var wed=Date.parse('2027-02-13T19:15:00+05:30'), cds=[].slice.call(d.querySelectorAll('[data-cd]'));
+  function pad(n){return (n<10?'0':'')+n}
+  function cd(){var s=Math.floor(Math.max(0,wed-Date.now())/1000), v={d:Math.floor(s/86400),h:pad(Math.floor(s%86400/3600)),m:pad(Math.floor(s%3600/60)),s:pad(s%60)}; cds.forEach(function(el){el.textContent=v[el.dataset.cd]})}
+  cd(); setInterval(cd,1000);
+
+  /* ---------- RSVP via WhatsApp ---------- */
+  var f=d.getElementById('rsvp-f'), cnt=d.getElementById('g-count'), n=2, send=d.getElementById('r-send'), err=d.getElementById('r-err');
+  function msg(){
+    var name=d.getElementById('r-name').value.trim()||'[your name]';
+    var att=f.querySelector('input[name=att]:checked').value;
+    var evs=[].slice.call(f.querySelectorAll('input[name=events]:checked')).map(function(x){return x.value});
+    var food=f.querySelector('input[name=food]:checked').value, note=d.getElementById('r-msg').value.trim();
+    var t='RSVP · Aanya & Vihaan wedding\n\nName: '+name+'\nReply: '+att;
+    if(att!=='Regretfully declines') t+='\nGuests: '+n+'\nCeremonies: '+(evs.join(', ')||'None selected')+'\nFood: '+food;
+    if(note) t+='\n\nBlessings: '+note;
+    return t;
+  }
+  function upd(){send.href='https://wa.me/?text='+encodeURIComponent(msg())}
+  f.addEventListener('input',upd); f.addEventListener('change',upd);
+  d.getElementById('g-minus').onclick=function(){n=Math.max(1,n-1);cnt.textContent=n;upd()};
+  d.getElementById('g-plus').onclick=function(){n=Math.min(15,n+1);cnt.textContent=n;upd()};
+  upd();
+  send.addEventListener('click',function(ev){
+    var name=d.getElementById('r-name').value.trim();
+    if(!name){ev.preventDefault(); err.hidden=false; d.getElementById('r-name').focus(); return}
+    err.hidden=true; upd();
+    var att=f.querySelector('input[name=att]:checked').value, first=name.split(' ')[0];
+    d.getElementById('r-thanks-h').textContent=att==='Regretfully declines'?'We will miss you, '+first:'Thank you, '+first+'!';
+    d.getElementById('r-thanks-p').textContent='WhatsApp has opened with your reply filled in. Choose the family contact and tap send.';
+    setTimeout(function(){f.hidden=true; d.getElementById('r-thanks').hidden=false},400);
+  });
+  f.addEventListener('submit',function(ev){ev.preventDefault()});
+  d.getElementById('r-again').onclick=function(){d.getElementById('r-thanks').hidden=true; f.hidden=false};
+
+  /* ---------- share ---------- */
+  var url=location.href.split('#')[0];
+  d.getElementById('wa').href='https://wa.me/?text='+encodeURIComponent('You are invited to the wedding of Aanya & Vihaan · 11–14 February 2027 · Udaipur.\nOpen the invitation: '+url);
+  var cm=d.getElementById('copied');
+  d.getElementById('copy').addEventListener('click',function(){
+    if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(url).then(function(){cm.textContent='Link copied'},function(){cm.textContent=url})}else{cm.textContent=url}
+  });
+
+  measure(); frame(); requestAnimationFrame(particles);
+})();
+</script>
+
+</body>
+</html>
