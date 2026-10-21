@@ -10,7 +10,7 @@
 <meta property="og:title" content="Aanya & Vihaan · Wedding Invitation">
 <meta property="og:description" content="11–14 February 2027 · Udaipur">
 <meta property="og:type" content="website">
-<style>:root,html,body{color-scheme:only light!important;forced-color-adjust:none}[hidden]{display:none!important}body{margin:0}img{max-width:100%}:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}</style>
+<style>:root,html,body{color-scheme:only light!important}[hidden]{display:none!important}body{margin:0}img{max-width:100%}:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}</style>
 </head>
 <body>
 <title>Aanya &amp; Vihaan Wedding</title>
@@ -212,6 +212,26 @@ legend{font-weight:700;font-size:16px;margin-bottom:8px;padding:0}
 .fine{font-size:14px;color:var(--indigo-2);margin:0;text-align:center;font-style:italic}
 .thanks{display:flex;flex-direction:column;align-items:center;text-align:center;gap:12px;padding:16px 0}
 .copied{min-height:1.2em;margin:0;font-size:15px;color:var(--clay-d);text-align:center}
+
+
+/* ---- dark-mode proof: forced-dark browsers (Samsung Internet, Chrome "darken websites") recolour plain text and fills,
+   but leave images and gradients alone. So key text is painted with a gradient clipped to the glyphs. ---- */
+:root{color-scheme:only light}
+.ink{-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent}
+.deva,.title,.amp,.eyebrow,.line,.note,.tile b,.tile span,.seal .deva,.seal .mono,.seal .nm,.seal .dt,.studio-n,.foot .eyebrow,.foot .sub,.guest,.sample{
+  -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.deva,.title,.seal .deva,.seal .mono,.seal .dt,.tile span{background-image:linear-gradient(var(--clay),var(--clay))}
+.amp,.eyebrow,.line,.tile b,.seal .nm,.studio-n,.foot .eyebrow,.guest,.sample{background-image:linear-gradient(var(--indigo),var(--indigo))}
+.note{background-image:linear-gradient(var(--clay-d),var(--clay-d))}
+.foot .sub{background-image:linear-gradient(var(--indigo-2),var(--indigo-2))}
+.seal .mono em{-webkit-text-fill-color:transparent;background-image:linear-gradient(var(--indigo),var(--indigo));-webkit-background-clip:text;background-clip:text}
+.copy,.copy *{text-shadow:none!important}
+.in .title{animation:none}
+.copy::before{content:"";position:absolute;inset:-8% -12%;z-index:-1;pointer-events:none;background-image:radial-gradient(closest-side,rgba(244,235,221,.78),rgba(244,235,221,.45) 60%,rgba(244,235,221,0))}
+.tile,.btn{background-image:linear-gradient(rgba(255,248,234,.92),rgba(255,248,234,.92))}
+.btn.solid{background-image:linear-gradient(var(--clay),var(--clay))}
+.foot{background-image:linear-gradient(var(--paper),var(--paper))}
+.guest,.sample{background-color:transparent;background-image:linear-gradient(var(--indigo),var(--indigo)),linear-gradient(rgba(255,248,234,.88),rgba(255,248,234,.88));-webkit-background-clip:text,padding-box;background-clip:text,padding-box}
 
 @media (prefers-reduced-motion:reduce){
   .rv,.js .in .rv{transition:opacity .4s;transform:none;filter:none}
