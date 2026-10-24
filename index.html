@@ -111,7 +111,7 @@ body.locked{overflow:hidden;height:100%}
 .cover-frame{position:relative;width:min(100%,440px);height:100%;margin:0 auto;overflow:hidden}
 .door{position:absolute;top:0;bottom:0;width:50%;overflow:hidden;transition:transform 1.8s var(--ease),filter 1.8s;z-index:1}
 .door.l{left:0;transform-origin:left center}.door.r{right:0;transform-origin:right center}
-.dart{position:absolute;inset:0;width:200%;background:url(img/02-welcome.webp) center top/cover,var(--ivory)}
+.dart{position:absolute;inset:0;width:200%;background:url(img/02-welcome.webp) center top/cover,url(02-welcome.webp) center top/cover,var(--ivory)}
 .door.r .dart{left:-100%}
 .door::after{content:"";position:absolute;top:0;bottom:0;width:14px;background:radial-gradient(circle,var(--mirror) 0 2px,var(--clay) 2.5px 4px,transparent 4.5px) center 0/14px 18px repeat-y,linear-gradient(90deg,rgba(126,58,41,.6),rgba(126,58,41,.15))}
 .door.l::after{right:0}.door.r::after{left:0;transform:scaleX(-1)}
@@ -338,7 +338,7 @@ legend{font-weight:700;font-size:16px;margin-bottom:8px;padding:0}
   <div class="hint" id="hint"><span>Scroll</span><i></i></div>
   <footer class="foot" id="foot">
     <p class="eyebrow">Invitation by</p>
-    <p class="studio-n">Shaadi Video Films</p>
+    <p class="studio-n">The Ami Video India</p>
     <p class="sub">Wedding films &amp; interactive invitations</p>
   </footer>
 </div>
@@ -451,6 +451,8 @@ var DATA={"N": 18, "labels": ["Ganesh Vandana", "Swagatam", "The Couple", "Groom
   }
   if('IntersectionObserver' in window){var vo=new IntersectionObserver(function(es){es.forEach(function(e){e.target.classList.toggle('vis',e.isIntersecting)})},{rootMargin:'20% 0px'}); secs.forEach(function(s){vo.observe(s)})} else secs.forEach(function(s){s.classList.add('vis')});
   /* load and decode every painting up front so nothing pops in while scrolling */
+  /* images work whether they sit in img/ or next to this page */
+  imgs.forEach(function(im){im.addEventListener('error',function(){var s=im.getAttribute('src'); if(s.indexOf('img/')===0) im.src=s.slice(4)},{once:true})});
   imgs.forEach(function(im,i){im.loading='eager'; if(im.decode){var go=function(){im.decode().catch(function(){})}; if(im.complete) go(); else im.addEventListener('load',go,{once:true})}});
   function kick(){if(!ticking){ticking=true;requestAnimationFrame(frame)}}
   addEventListener('scroll',kick,{passive:true});
