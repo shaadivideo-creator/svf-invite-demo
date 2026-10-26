@@ -61,7 +61,9 @@ body.locked{overflow:hidden;height:100%}
 .orn b{display:block;width:2.5cqw;height:2.5cqw;transform:rotate(45deg);border:1.5px solid var(--clay);background:var(--mirror);box-shadow:0 0 0 2px var(--ivory),0 0 12px #fff}
 .in .orn b{animation:spin 2.4s var(--ease) .5s 1}
 @keyframes spin{to{transform:rotate(405deg)}}
-.acts{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin-top:4px}
+.acts{display:flex;gap:6px;flex-wrap:wrap;justify-content:center;margin-top:4px}
+.copy .acts{flex-wrap:nowrap;margin-inline:-9cqw;max-width:calc(100% + 18cqw)}
+.copy .acts .btn{white-space:nowrap;font-size:max(12.5px,3.25cqw);padding:.5em .85em;gap:.32em;letter-spacing:.03em}
 .btn{font-family:var(--f-body);font-weight:700;font-size:max(13.5px,3.5cqw);letter-spacing:.05em;color:var(--indigo);background:rgba(255,248,234,.9);border:1.5px solid var(--indigo);border-radius:999px;padding:.5em 1.05em;text-decoration:none;cursor:pointer;display:inline-flex;align-items:center;gap:.4em;transition:transform .2s,background .2s;text-shadow:none}
 .btn svg{width:1.1em;height:1.1em}
 .btn:hover{background:var(--mirror)}
